@@ -1,3 +1,6 @@
+var SampleSize = 1000000;
+var RandMax=1000000000;//120
+
 var gcd = function(a, b) {
     if ( ! b) {
         return a;
@@ -11,22 +14,19 @@ function getRandomInt(min, max) {
 }
 
 var RandomPair = function(){
-  this.x = getRandomInt(1,120);
-  this.y = getRandomInt(1,120);
+  this.x = getRandomInt(1,RandMax);
+  this.y = getRandomInt(1,RandMax);
   this.g = gcd(this.x,this.y);
 }
 
-var SampleSize = 1000000;
-var gcd1 = 0;
 var t0 = performance.now();
-
-//var SetOfGcd = new Array();
+var gcd1 = 0;
 
 for (i = 0; i < SampleSize; i++) {
   var O = new RandomPair();
   if(O.g==1)gcd1++;
-  //SetOfGcd.push(O);
 }
+
 var PE = Math.sqrt(6/(gcd1/SampleSize));
 var t1 = performance.now();
 
