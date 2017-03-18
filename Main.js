@@ -1,4 +1,4 @@
-var SampleSize = 1000000;
+var SampleSize = 100000;
 var RandMax=1000000000;//120
 
 var gcd = function(a, b) {
