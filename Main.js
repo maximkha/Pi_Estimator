@@ -23,6 +23,7 @@ var t0 = performance.now();
 var gcd1 = 0;
 
 for (i = 0; i < SampleSize; i++) {
+  console.log((i/SampleSize)*100);
   var O = new RandomPair();
   if(O.g==1)gcd1++;
 }
